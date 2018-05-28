@@ -191,9 +191,7 @@ public class main extends AppCompatActivity {
                 Bitmap bmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
                 Drawable myDrawable = getResources().getDrawable(R.mipmap.ic_launcher);
                 final Bitmap myLogo = ((BitmapDrawable) myDrawable).getBitmap();
-                if(imageView.getDrawable().equals()){
-
-                }
+                //if(imageView.getDrawable().equals()){}
                 guardarEnBBDD();
             }
         });
