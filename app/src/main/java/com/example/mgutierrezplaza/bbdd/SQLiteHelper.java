@@ -18,9 +18,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         database.execSQL(sql);
     }
 
-    public void insertData(String name, byte[] image, byte[] image2, byte[] image3, byte[] image4){
+    public void insertData(String name, byte[] image, byte[] image2, byte[] image3, byte[] image4, String audio){
+
         SQLiteDatabase database = getWritableDatabase();
-        String sql = "INSERT INTO PRUEBA VALUES (NULL,?,?,?,?,?)";
+        String sql = "INSERT INTO PRUEBA VALUES (NULL,?, ?, ?, ?, ?, ?)";
 
         SQLiteStatement statement = database.compileStatement(sql);
 
@@ -30,6 +31,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         statement.bindBlob(3, image2);
         statement.bindBlob(4, image3);
         statement.bindBlob(5, image4);
+        statement.bindString(6, audio);
 
         statement.executeInsert();
     }
